@@ -3,12 +3,13 @@ import App from '../App.jsx'
 import * as CONSTANTS from '../constants/testingConstants.js'
 
 describe('Book Store', () => {
-    test('Show book store header', () => {
+    beforeEach(() => {
         render(<App />)
-        expect(screen.getByText(CONSTANTS.STORE_HEADER_TITLE)).toBeInTheDocument()
+    })
+    test('Show book store header', () => {
+        xpect(screen.getByText(CONSTANTS.STORE_HEADER_TITLE)).toBeInTheDocument()
     })
     test('Show books information as card', () => {
-        render(<App />)
         CONSTANTS.BOOKS.forEach(book => {
             const image = screen.getByAltText(book.title)
             expect(image.src).toContain('/images')
@@ -21,17 +22,14 @@ describe('Book Store', () => {
         expect(prices).toHaveLength(CONSTANTS.BOOKS.length)
     })
     test('Show discount related details in footer', () => {
-        render(<App />)
         expect(screen.getByText(CONSTANTS.MIX_AND_SAVE_TEXT)).toBeInTheDocument()
         expect(screen.getByText(CONSTANTS.DISCOUNT_INFO_TEXT)).toBeInTheDocument()
     })
     test('Show basket is empty at the start', () => {
-        render(<App />)
         expect(screen.getByText(CONSTANTS.BASKET_SECTION_TITLE)).toBeInTheDocument()
         expect(screen.getByText(CONSTANTS.BASKET_EMPTY_MESSAGE)).toBeInTheDocument()
     })
     test("Show Add book to basket for all books", () => {
-        render(<App />)
         const buttons = screen.getAllByText(CONSTANTS.ADD_BUTTON_LABEL)
         expect(buttons.length).toBe(CONSTANTS.BOOKS.length)
         CONSTANTS.BOOKS.forEach((book, index) => {
