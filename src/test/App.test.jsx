@@ -3,12 +3,13 @@ import App from '../App.jsx'
 import * as CONSTANTS from '../constants/testingConstants.js'
 
 describe('Book Store', () => {
-    test('Show book store header', () => {
+    beforeEach(() => {
         render(<App />)
+    })
+    test('Show book store header', () => {
         expect(screen.getByText(CONSTANTS.STORE_HEADER_TITLE)).toBeInTheDocument()
     })
     test('Show books information as card', () => {
-        render(<App />)
         CONSTANTS.BOOKS.forEach(book => {
             const image = screen.getByAltText(book.title)
             expect(image.src).toContain('/images')
