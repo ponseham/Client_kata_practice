@@ -18,3 +18,7 @@ export const BOOKS_BY_SAME_AUTHOR = {
 export const BOOK_PRICE = 50
 
 export const CURRENCY_LABEL = 'EUR'
+
+export const MIX_AND_SAVE_TEXT = 'Mix & Save:'
+export const DISCOUNT_INFO_TEXT = '2 Books = 5% off · 3 Books = 10% off · 4 Books = 20% off · 5 Books = 25% off'
+
