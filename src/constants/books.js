@@ -1,5 +1,3 @@
-export const STORE_HEADER_TITLE = 'Books Store'
-
 export const BOOK_IMAGE_URL = '/images'
 
 export const BOOKS = [
@@ -10,11 +8,4 @@ export const BOOKS = [
     { id: 5, title: 'Working Effectively with Legacy Code', author: 'Michael Feathers', coverUrl: `${BOOK_IMAGE_URL}/Kata_DevelopmentBooks_Refactoring.jpeg` },
 ]
 
-export const BOOKS_BY_SAME_AUTHOR = {
-    'Robert C. Martin': 3,
-    'Kent Beck': 1,
-    'Michael Feathers': 1
-}
 export const BOOK_PRICE = 50
-
-export const CURRENCY_LABEL = 'EUR'
