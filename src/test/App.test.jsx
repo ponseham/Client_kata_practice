@@ -30,4 +30,15 @@ describe('Book Store', () => {
         expect(screen.getByText(CONSTANTS.BASKET_SECTION_TITLE)).toBeInTheDocument()
         expect(screen.getByText(CONSTANTS.BASKET_EMPTY_MESSAGE)).toBeInTheDocument()
     })
+    test("Show Add book to basket for all books", () => {
+        render(<App />)
+        const buttons = screen.getAllByText(CONSTANTS.ADD_BUTTON_LABEL)
+        expect(buttons.length).toBe(CONSTANTS.BOOKS.length)
+        CONSTANTS.BOOKS.forEach((book, index) => {
+            expect(buttons[index]).toHaveAttribute(
+                'aria-label',
+                CONSTANTS.ADD_TO_BASKET_ARIA_LABEL.replace('_', book.title)
+            )
+        })
+    })
 })

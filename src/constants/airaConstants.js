@@ -1,0 +1,1 @@
+export const ADD_TO_BASKET_ARIA_LABEL = 'Add _ to basket'
