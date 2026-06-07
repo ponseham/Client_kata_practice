@@ -10,3 +10,6 @@ export function selectHasItemsInBasket(state) {
 export function selectIsBookAddedToBasket(bookId) {
     return (state) => state.items[bookId]
 }
+export function selectBookQuantity(bookId) {
+    return (state) => state.items[bookId]
+}

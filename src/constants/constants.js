@@ -26,3 +26,5 @@ export const TEST_ID_TOTAL = 'total'
 export const TEST_ID_SUBTOTAL = 'subtotal'
 export const DISCOUNT_LABEL = 'Discount'
 export const TEST_ID_DISCOUNT = 'discount'
+
+export const BOOK_QUANTITY_SEPARATOR = '×'

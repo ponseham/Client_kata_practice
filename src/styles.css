@@ -199,3 +199,8 @@
 .price-amount {
     font-variant-numeric: tabular-nums;
 }
+
+.quantity-badge {
+    color: #6c757d;
+    margin-left: 4px;
+}
