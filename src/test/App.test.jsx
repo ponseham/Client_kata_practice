@@ -14,8 +14,8 @@ async function addGivenBooksToBasket(bookIndex = []) {
 }
 
 describe('Book Store', () => {
-    const store = createStore(basketReducer)
     beforeEach(() => {
+        const store = createStore(basketReducer)
         render(
             <Provider store={store}>
                 <App />
@@ -60,6 +60,7 @@ describe('Book Store', () => {
         await addGivenBooksToBasket(addBookToBasket)
         const basketItems = screen.getAllByTestId(CONSTANTS.TEST_ID_BASKET_ITEM)
         expect(basketItems).toHaveLength(addBookToBasket.length)
+        expect(screen.getAllByText(CONSTANTS.ADD_ONE_MORE_PREFIX)).toHaveLength(basketItems.length)
         addBookToBasket.forEach(book => {
             expect(screen.getAllByText(CONSTANTS.BOOKS[book].title).length).toBe(CONSTANTS.EXPECTED_BOOK_TITLE_DISPLAYED)
         })
