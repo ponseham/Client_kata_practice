@@ -1,4 +1,5 @@
 import { BOOK_PRICE } from '../constants/books'
+import { DISCOUNT_RATES } from '../constants/discount'
 export function convertBasketItemsToMap(basketItems) {
     const basketAsMap = new Map(
         Object.entries(basketItems).map(([bookId, quantity]) => [Number(bookId), quantity])
@@ -10,15 +11,8 @@ export function calculateBasketPrice(basketCounts) {
     let total = 0
 
     subtotal = basketCounts.size * BOOK_PRICE
-    let discount = 0
-    if (basketCounts.size === 2)
-        discount = 0.05
-    else if (basketCounts.size === 3)
-        discount = 0.10;
-    else if (basketCounts.size === 4)
-        discount = 0.20;
-    else if (basketCounts.size === 5)
-        discount = 0.25;
+    let discount = DISCOUNT_RATES.get(basketCounts.size) ?? 0
+
     total = basketCounts.size * BOOK_PRICE * (1 - discount)
 
     return { subtotal, discount: subtotal - total, total }
