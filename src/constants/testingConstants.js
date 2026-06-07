@@ -40,6 +40,12 @@ export const CLEAR_BASKET_ARIA_LABEL = 'Clear basket'
 
 export const SUBTOTAL_LABEL = 'Subtotal'
 export const TOTAL_LABEL = 'Total'
+export const DISCOUNT_LABEL = 'Discount'
 export const TEST_ID_TOTAL = 'total'
 export const TEST_ID_SUBTOTAL = 'subtotal'
+export const TEST_ID_DISCOUNT = 'discount'
 export const ONE_BOOK_PRICE_WITHOUT_DISCOUNT_AMOUNT = '50.00'
+
+export const TWO_BOOK_WITH_DISCOUNT_TOTAL = '100.00'
+export const TWO_BOOK_WITH_DISCOUNT_SUBTOTAL = '95.00'
+export const TWO_BOOK_WITH_DISCOUNT_DISCOUNT = '-5.00'
