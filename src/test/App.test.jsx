@@ -78,4 +78,15 @@ describe('Book Store', () => {
         expect(screen.getAllByText(CONSTANTS.BOOKS[1].title).length).toBe(CONSTANTS.EXPECTED_BOOK_TITLE_DISPLAYED_AFTER_REMOVE)
         expect(screen.getAllByTestId(CONSTANTS.TEST_ID_BASKET_ITEM)).toHaveLength(addBookToBasket.length - 1)
     })
+    test("Clear all books from basket", async () => {
+        await addGivenBooksToBasket([0, 1])
+        const clearButton = screen.getByText(CONSTANTS.CLEAR_BUTTON_LABEL)
+        expect(clearButton).toBeInTheDocument()
+        expect(clearButton).toHaveAttribute(
+            'aria-label',
+            CONSTANTS.CLEAR_BASKET_ARIA_LABEL
+        )
+        await userEvent.click(clearButton)
+        expect(screen.getByText(CONSTANTS.BASKET_EMPTY_MESSAGE)).toBeInTheDocument()
+    })
 })

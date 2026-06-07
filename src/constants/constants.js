@@ -11,7 +11,8 @@ export const BASKET_EMPTY_MESSAGE = 'Your basket is empty'
 export const ADD_BUTTON_LABEL = '+Add'
 export const ADD_ONE_MORE_PREFIX = '+1'
 export const REMOVE_SINGLE_BOOK_BUTTON_LABEL = '-1'
-
+export const CLEAR_BUTTON_LABEL = 'Clear'
+export const CLEAR_BASKET_ARIA_LABEL = 'Clear basket'
 
 export const TEST_ID_BASKET_ITEM = 'basket-item'
 
