@@ -36,3 +36,11 @@ export const REMOVE_SINGLE_BOOK_FROM_BASKET_ARIA_LABEL = 'Remove one copy of _ f
 export const EXPECTED_BOOK_TITLE_DISPLAYED_AFTER_REMOVE = 1
 export const CLEAR_BUTTON_LABEL = 'Clear'
 export const CLEAR_BASKET_ARIA_LABEL = 'Clear basket'
+
+
+export const SUBTOTAL_LABEL = 'Subtotal'
+export const TOTAL_LABEL = 'Total'
+export const DISCOUNT_LABEL = 'Discount'
+export const TEST_ID_TOTAL = 'total'
+export const TEST_ID_SUBTOTAL = 'subtotal'
+export const ONE_BOOK_PRICE_WITHOUT_DISCOUNT_AMOUNT = '50.00'
