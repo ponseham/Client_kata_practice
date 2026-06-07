@@ -1,4 +1,4 @@
-import { QUANTITY_STEP } from '../constants/constants'
+import { INITIAL_QUANTITY, QUANTITY_STEP } from '../constants/constants'
 const initialState = {
     items: {},
 }
@@ -13,6 +13,18 @@ export default function basketReducer(state = initialState, action) {
                     ...state.items,
                     [bookId]: QUANTITY_STEP,
                 },
+            }
+        }
+        case 'REMOVE_SINGLE_BOOK': {
+            const bookId = action.payload
+            const updatedBasket = {
+                ...state.items,
+            }
+            delete updatedBasket[bookId]
+
+            return {
+                ...state,
+                items: { ...updatedBasket },
             }
         }
         default:

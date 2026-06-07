@@ -7,3 +7,6 @@ export function selectHasItemsInBasket(state) {
     )
     return booksAddedToBasket.length > EMPTY_COUNT
 }
+export function selectIsBookAddedToBasket(bookId) {
+    return (state) => state.items[bookId]
+}

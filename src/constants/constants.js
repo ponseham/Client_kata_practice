@@ -9,6 +9,9 @@ export const DISCOUNT_INFO_TEXT = '2 Books = 5% off · 3 Books = 10% off · 4 Bo
 export const BASKET_SECTION_TITLE = 'Your Basket'
 export const BASKET_EMPTY_MESSAGE = 'Your basket is empty'
 export const ADD_BUTTON_LABEL = '+Add'
+export const ADD_ONE_MORE_PREFIX = '+1'
+export const REMOVE_SINGLE_BOOK_BUTTON_LABEL = '-1'
+
 
 export const TEST_ID_BASKET_ITEM = 'basket-item'
 
