@@ -19,3 +19,8 @@ export const TEST_ID_BASKET_ITEM = 'basket-item'
 export const QUANTITY_STEP = 1
 export const INITIAL_QUANTITY = 0
 export const EMPTY_COUNT = 0
+
+export const SUBTOTAL_LABEL = 'Subtotal'
+export const TOTAL_LABEL = 'Total'
+export const TEST_ID_TOTAL = 'total'
+export const TEST_ID_SUBTOTAL = 'subtotal'
