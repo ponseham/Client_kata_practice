@@ -34,3 +34,5 @@ export const ADD_ONE_MORE_PREFIX = '+1'
 export const REMOVE_SINGLE_BOOK_BUTTON_LABEL = '-1'
 export const REMOVE_SINGLE_BOOK_FROM_BASKET_ARIA_LABEL = 'Remove one copy of _ from basket'
 export const EXPECTED_BOOK_TITLE_DISPLAYED_AFTER_REMOVE = 1
+export const CLEAR_BUTTON_LABEL = 'Clear'
+export const CLEAR_BASKET_ARIA_LABEL = 'Clear basket'
