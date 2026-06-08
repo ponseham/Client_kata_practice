@@ -19,6 +19,7 @@ export const TEST_ID_BASKET_ITEM = 'basket-item'
 export const QUANTITY_STEP = 1
 export const INITIAL_QUANTITY = 0
 export const EMPTY_COUNT = 0
+export const SINGLE_ITEM_COUNT = 1
 
 export const SUBTOTAL_LABEL = 'Subtotal'
 export const TOTAL_LABEL = 'Total'
@@ -30,3 +31,7 @@ export const TEST_ID_DISCOUNT = 'discount'
 export const BOOK_QUANTITY_SEPARATOR = '×'
 export const REMOVE_BUTTON_LABEL = 'X'
 export const REMOVE_BUTTON_ARIA_LABEL = 'Remove _'
+
+export const IN_BASKET_SUFFIX = 'in basket'
+export const ITEMS = 'items'
+export const ITEM = 'item'

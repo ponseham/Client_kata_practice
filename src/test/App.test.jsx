@@ -142,4 +142,13 @@ describe('Book Store', () => {
         expect(screen.getAllByText(CONSTANTS.BOOKS[1].title).length).toBe(CONSTANTS.EXPECTED_BOOK_TITLE_DISPLAYED_AFTER_REMOVE)
         expect(screen.getAllByText(CONSTANTS.BOOKS[2].title).length).toBe(CONSTANTS.EXPECTED_BOOK_TITLE_DISPLAYED)
     })
+    test("Display total number of selected books in header", async () => {
+        let addBookToBasket = [3]
+        await addGivenBooksToBasket(addBookToBasket)
+        expect(screen.getByText(addBookToBasket.length + ' ' + CONSTANTS.ITEM + ' ' + CONSTANTS.IN_BASKET_SUFFIX)).toBeInTheDocument()
+        await userEvent.click(screen.getByText(CONSTANTS.CLEAR_BUTTON_LABEL))
+        addBookToBasket = [1, 2, 4]
+        await addGivenBooksToBasket(addBookToBasket)
+        expect(screen.getByText(addBookToBasket.length + ' ' + CONSTANTS.ITEMS + ' ' + CONSTANTS.IN_BASKET_SUFFIX)).toBeInTheDocument()
+    });
 })

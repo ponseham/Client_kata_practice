@@ -66,3 +66,7 @@ export const BOOK_QUANTITY_SEPARATOR = '×'
 export const REMOVE_BUTTON_LABEL = 'X'
 export const REMOVE_BUTTON_ARIA_LABEL = 'Remove _'
 export const EMPTY_COUNT = 0
+
+export const IN_BASKET_SUFFIX = 'in basket'
+export const ITEMS = 'items'
+export const ITEM = 'item'
