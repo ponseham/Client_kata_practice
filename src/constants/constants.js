@@ -21,3 +21,8 @@ export const INITIAL_QUANTITY = 0
 export const EMPTY_COUNT = 0
 export const REMOVE_BUTTON_LABEL = 'X'
 export const REMOVE_BUTTON_ARIA_LABEL = 'Remove _'
+
+export const SUBTOTAL_LABEL = 'Subtotal'
+export const TOTAL_LABEL = 'Total'
+export const TEST_ID_TOTAL = 'total'
+export const TEST_ID_SUBTOTAL = 'subtotal'

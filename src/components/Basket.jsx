@@ -4,6 +4,7 @@ import { selectHasItemsInBasket } from '../store/selectors'
 import { clearAllBooksFromBasket } from '../store/actions'
 import { BOOKS } from '../constants/books'
 import BasketItem from './BasketItem'
+import BasketSummary from './BasketSummary'
 import '../styles.css'
 
 export default function Basket() {
@@ -38,6 +39,7 @@ export default function Basket() {
                         {booksInBasket.map((book) => (
                             <BasketItem key={book.id} book={book} />
                         ))}
+                        <BasketSummary />
                     </>
                 ) : (
                     <p className="empty-message">{BASKET_EMPTY_MESSAGE}</p>
