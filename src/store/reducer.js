@@ -15,6 +15,18 @@ export default function basketReducer(state = initialState, action) {
                 },
             }
         }
+        case 'REMOVE_BOOK_FROM_BASKET': {
+            const bookId = action.payload
+
+            const updatedBasket = {
+                ...state.items,
+            }
+            delete updatedBasket[bookId]
+            return {
+                ...state,
+                items: { ...updatedBasket },
+            }
+        }
         default:
             return state
     }
