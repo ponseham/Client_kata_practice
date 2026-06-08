@@ -63,3 +63,8 @@ export const FOUR_BOOK_WITH_DISCOUNT_DISCOUNT = '-40.00'
 export const FIVE_BOOK_WITH_DISCOUNT_TOTAL = '250.00'
 export const FIVE_BOOK_WITH_DISCOUNT_SUBTOTAL = '187.50'
 export const FIVE_BOOK_WITH_DISCOUNT_DISCOUNT = '-62.50'
+
+
+export const REMOVE_SINGLE_BOOK_BUTTON_LABEL = '-1'
+export const REMOVE_SINGLE_BOOK_FROM_BASKET_ARIA_LABEL = 'Remove one copy of _ from basket'
+export const QUANTITY_STEP = 1

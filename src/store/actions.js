@@ -3,7 +3,8 @@ import { CLEAR_BASKET_ARIA_LABEL } from "../constants/constants"
 const ACTION_TYPES = {
     ADD: 'ADD_BOOK_TO_BASKET',
     REMOVE_BOOK: 'REMOVE_BOOK_FROM_BASKET',
-    CLEAR_BASKET: 'CLEAR_BASKET'
+    CLEAR_BASKET: 'CLEAR_BASKET',
+    REMOVE_SINGLE_COPY: 'REMOVE_SINGLE_COPY_OF_BBOK'
 }
 export const addBookToBasket = (bookId) => ({
     type: ACTION_TYPES.ADD,
@@ -15,4 +16,8 @@ export const removeBookFromBasket = (bookId) => ({
 })
 export const clearAllBooksFromBasket = () => ({
     type: ACTION_TYPES.CLEAR_BASKET,
+})
+export const removeSingleCopyOfBook = (bookId) => ({
+    type: ACTION_TYPES.REMOVE_SINGLE_COPY,
+    payload: bookId,
 })
