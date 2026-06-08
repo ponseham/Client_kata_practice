@@ -10,6 +10,10 @@ export const BASKET_SECTION_TITLE = 'Your Basket'
 export const BASKET_EMPTY_MESSAGE = 'Your basket is empty'
 export const ADD_BUTTON_LABEL = '+Add'
 
+export const CLEAR_BUTTON_LABEL = 'Clear'
+export const CLEAR_BASKET_ARIA_LABEL = 'Clear basket'
+
+
 export const TEST_ID_BASKET_ITEM = 'basket-item'
 
 export const QUANTITY_STEP = 1
