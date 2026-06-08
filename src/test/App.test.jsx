@@ -121,4 +121,10 @@ describe('Book Store', () => {
         expect(screen.getByTestId(CONSTANTS.TEST_ID_SUBTOTAL)).toHaveTextContent(CONSTANTS.FIVE_BOOK_WITH_DISCOUNT_SUBTOTAL)
         expect(screen.getByTestId(CONSTANTS.TEST_ID_DISCOUNT)).toHaveTextContent(CONSTANTS.FIVE_BOOK_WITH_DISCOUNT_DISCOUNT)
     })
+    test("Display updated book quantity when additional copies are added'", async () => {
+        const addBookToBasket = [1, 1]
+        await addGivenBooksToBasket(addBookToBasket)
+        expect(screen.getByText(CONSTANTS.BOOK_QUANTITY_SEPARATOR + addBookToBasket.length)).toBeInTheDocument()
+        expect(screen.getByText(CONSTANTS.ADD_ONE_MORE_PREFIX)).toBeInTheDocument()
+    })
 })
