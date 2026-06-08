@@ -28,3 +28,5 @@ export const DISCOUNT_LABEL = 'Discount'
 export const TEST_ID_DISCOUNT = 'discount'
 
 export const BOOK_QUANTITY_SEPARATOR = '×'
+export const REMOVE_BUTTON_LABEL = 'X'
+export const REMOVE_BUTTON_ARIA_LABEL = 'Remove _'

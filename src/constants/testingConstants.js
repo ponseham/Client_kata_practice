@@ -63,3 +63,6 @@ export const FIVE_BOOK_WITH_DISCOUNT_SUBTOTAL = '187.50'
 export const FIVE_BOOK_WITH_DISCOUNT_DISCOUNT = '-62.50'
 
 export const BOOK_QUANTITY_SEPARATOR = '×'
+export const REMOVE_BUTTON_LABEL = 'X'
+export const REMOVE_BUTTON_ARIA_LABEL = 'Remove _'
+export const EMPTY_COUNT = 0
