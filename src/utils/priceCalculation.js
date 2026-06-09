@@ -11,6 +11,8 @@ export function calculateBasketPrice(basketItems) {
         discount = 0.05
     else if (basketSize === 3)
         discount = 0.10;
+    else if (basketSize === 4)
+        discount = 0.20;
     total = basketSize * BOOK_PRICE * (1 - discount)
 
     return { subtotal, discount: subtotal - total, total }
