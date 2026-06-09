@@ -32,3 +32,8 @@ export const ADD_ONE_MORE_PREFIX = '+1'
 export const BOOK_QUANTITY_SEPARATOR = '×'
 
 export const REMOVE_SINGLE_BOOK_BUTTON_LABEL = '-1'
+
+export const IN_BASKET_SUFFIX = 'in basket'
+export const ITEMS = 'items'
+export const ITEM = 'item'
+export const SINGLE_ITEM_COUNT = 1

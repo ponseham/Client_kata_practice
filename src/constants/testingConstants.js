@@ -65,3 +65,7 @@ export const BOOK_QUANTITY_SEPARATOR = '×'
 export const QUANTITY_STEP = 1
 export const REMOVE_SINGLE_BOOK_BUTTON_LABEL = '-1'
 export const REMOVE_SINGLE_BOOK_FROM_BASKET_ARIA_LABEL = 'Remove one copy of _ from basket'
+
+export const IN_BASKET_SUFFIX = 'in basket'
+export const ITEMS = 'items'
+export const ITEM = 'item'
