@@ -30,3 +30,5 @@ export const DISCOUNT_LABEL = 'Discount'
 export const TEST_ID_DISCOUNT = 'discount'
 export const ADD_ONE_MORE_PREFIX = '+1'
 export const BOOK_QUANTITY_SEPARATOR = '×'
+
+export const REMOVE_SINGLE_BOOK_BUTTON_LABEL = '-1'
