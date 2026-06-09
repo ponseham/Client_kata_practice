@@ -17,3 +17,6 @@ export const INITIAL_QUANTITY = 0
 export const EMPTY_COUNT = 0
 export const REMOVE_BUTTON_LABEL = 'X'
 export const REMOVE_BUTTON_ARIA_LABEL = 'Remove _'
+
+export const CLEAR_BUTTON_LABEL = 'Clear'
+export const CLEAR_BASKET_ARIA_LABEL = 'Clear basket'

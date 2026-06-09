@@ -27,6 +27,12 @@ export default function basketReducer(state = initialState, action) {
                 items: { ...copyOfBasket },
             }
         }
+        case 'CLEAR_BASKET': {
+            return {
+                ...state,
+                items: {},
+            }
+        }
         default:
             return state
     }
