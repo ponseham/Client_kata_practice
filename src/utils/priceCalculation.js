@@ -7,8 +7,9 @@ export function calculateBasketPrice(basketItems) {
 
     subtotal = basketSize * BOOK_PRICE
     let discount = 0
+    if (basketSize === 2)
+        discount = 0.05
+    total = basketSize * BOOK_PRICE * (1 - discount)
 
-    total = basketSize * BOOK_PRICE
-
-    return { subtotal, discount: discount, total }
+    return { subtotal, discount: subtotal - total, total }
 }
