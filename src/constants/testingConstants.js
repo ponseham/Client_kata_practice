@@ -30,3 +30,8 @@ export const ADD_BUTTON_LABEL = '+Add'
 export const ADD_TO_BASKET_ARIA_LABEL = 'Add _ to basket'
 export const TEST_ID_BASKET_ITEM = 'basket-item'
 export const EXPECTED_BOOK_TITLE_DISPLAY_COUNT = 2
+
+export const REMOVE_BUTTON_LABEL = 'X'
+export const REMOVE_BUTTON_ARIA_LABEL = 'Remove _'
+export const EMPTY_COUNT = 0
+export const EXPECTED_BOOK_TITLE_DISPLAY_COUNT_AFTER_REMOVE_BOOK = 1

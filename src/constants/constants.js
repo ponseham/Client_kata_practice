@@ -15,3 +15,5 @@ export const TEST_ID_BASKET_ITEM = 'basket-item'
 export const QUANTITY_STEP = 1
 export const INITIAL_QUANTITY = 0
 export const EMPTY_COUNT = 0
+export const REMOVE_BUTTON_LABEL = 'X'
+export const REMOVE_BUTTON_ARIA_LABEL = 'Remove _'
