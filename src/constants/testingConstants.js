@@ -28,3 +28,5 @@ export const BASKET_EMPTY_MESSAGE = 'Your basket is empty'
 
 export const ADD_BUTTON_LABEL = '+Add'
 export const ADD_TO_BASKET_ARIA_LABEL = 'Add _ to basket'
+export const TEST_ID_BASKET_ITEM = 'basket-item'
+export const EXPECTED_BOOK_TITLE_DISPLAY_COUNT = 2
