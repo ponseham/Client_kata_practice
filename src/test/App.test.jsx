@@ -121,4 +121,11 @@ describe('Book Store', () => {
         expect(screen.getByTestId(CONSTANTS.TEST_ID_SUBTOTAL)).toHaveTextContent(CONSTANTS.FIVE_BOOK_WITH_DISCOUNT_SUBTOTAL)
         expect(screen.getByTestId(CONSTANTS.TEST_ID_DISCOUNT)).toHaveTextContent(CONSTANTS.FIVE_BOOK_WITH_DISCOUNT_DISCOUNT)
     })
+    test("Show basket item with quantity when adding another copy of a book", async () => {
+        const addBookToBasket = [1]
+        await addGivenBooksToBasket(addBookToBasket)
+        expect(screen.getByText(CONSTANTS.BOOK_QUANTITY_SEPARATOR + addBookToBasket.length)).toBeInTheDocument()
+        await userEvent.click(screen.getByText(CONSTANTS.ADD_ONE_MORE_PREFIX))
+        expect(screen.getByText(CONSTANTS.BOOK_QUANTITY_SEPARATOR + (addBookToBasket.length + CONSTANTS.QUANTITY_STEP))).toBeInTheDocument()
+    })
 })
