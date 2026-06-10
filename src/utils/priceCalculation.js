@@ -1,6 +1,6 @@
 import { BOOK_PRICE } from '../constants/books'
 import { DISCOUNT_RATES } from '../constants/discount'
-import { EMPTY_COUNT, NO_DISCOUNT } from '../constants/constants'
+import { EMPTY_COUNT, NO_DISCOUNT, GROUP_OF_FIVE_BOOKS, GROUP_OF_THREE_BOOKS } from '../constants/constants'
 
 function convertBasketItemsToMap(basketItems) {
     const basketAsMap = new Map(
@@ -11,6 +11,30 @@ function convertBasketItemsToMap(basketItems) {
 function remainingBooksToGroup(remainingCounts) {
 
     return [...remainingCounts.values()]
+}
+function findGroupOfFiveBooks(discountGroups) {
+    return discountGroups.find(group => group.size === GROUP_OF_FIVE_BOOKS)
+}
+function findGroupOfThreeBooks(discountGroups) {
+    return discountGroups.find(group => group.size === GROUP_OF_THREE_BOOKS)
+}
+
+function convertFiveAndThreeToTwoGroupsOfFour(discountGroups) {
+    let groupOfFiveBooks = findGroupOfFiveBooks(discountGroups)
+    let groupOfThreeBooks = findGroupOfThreeBooks(discountGroups)
+
+    if (!groupOfFiveBooks || !groupOfThreeBooks) {
+        return discountGroups
+    }
+
+    while (groupOfFiveBooks && groupOfThreeBooks) {
+        const bookToMove = [...groupOfFiveBooks].find(bookId => !groupOfThreeBooks.has(bookId))
+        groupOfFiveBooks.delete(bookToMove)
+        groupOfThreeBooks.add(bookToMove)
+        groupOfFiveBooks = findGroupOfFiveBooks(discountGroups)
+        groupOfThreeBooks = findGroupOfThreeBooks(discountGroups)
+    }
+    return discountGroups
 }
 function groupBooksIntoDiscountSets(basketCounts) {
     const remainingCounts = new Map(basketCounts)
@@ -26,7 +50,7 @@ function groupBooksIntoDiscountSets(basketCounts) {
         }
         discountGroups.push(currentGroup)
     }
-    return discountGroups
+    return convertFiveAndThreeToTwoGroupsOfFour(discountGroups)
 }
 export function calculateBasketPrice(basketItems) {
     const basketCounts = convertBasketItemsToMap(basketItems)

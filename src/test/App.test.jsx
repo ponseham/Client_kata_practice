@@ -158,4 +158,10 @@ describe('Book Store', () => {
         expect(screen.getByTestId(CONSTANTS.TEST_ID_SUBTOTAL)).toHaveTextContent(CONSTANTS.SEVEN_BOOK_WITH_DISCOUNT_SUBTOTAL)
         expect(screen.getByTestId(CONSTANTS.TEST_ID_DISCOUNT)).toHaveTextContent(CONSTANTS.SEVEN_BOOK_WITH_DISCOUNT_DISCOUNT)
     })
+    test("Show price with discount when adding eight books", async () => {
+        await addGivenBooksToBasket([0, 1, 2, 3, 4, 0, 1, 2])
+        expect(screen.getByTestId(CONSTANTS.TEST_ID_TOTAL)).toHaveTextContent(CONSTANTS.EIGHT_BOOKS_WITH_DISCOUNT_TOTAL)
+        expect(screen.getByTestId(CONSTANTS.TEST_ID_SUBTOTAL)).toHaveTextContent(CONSTANTS.EIGHT_BOOKS_WITH_DISCOUNT_SUBTOTAL)
+        expect(screen.getByTestId(CONSTANTS.TEST_ID_DISCOUNT)).toHaveTextContent(CONSTANTS.EIGHT_BOOKS_WITH_DISCOUNT_DISCOUNT)
+    })
 })
