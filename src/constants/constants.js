@@ -37,3 +37,5 @@ export const IN_BASKET_SUFFIX = 'in basket'
 export const ITEMS = 'items'
 export const ITEM = 'item'
 export const SINGLE_ITEM_COUNT = 1
+
+export const NO_DISCOUNT = 0

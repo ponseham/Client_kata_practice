@@ -69,3 +69,7 @@ export const REMOVE_SINGLE_BOOK_FROM_BASKET_ARIA_LABEL = 'Remove one copy of _ f
 export const IN_BASKET_SUFFIX = 'in basket'
 export const ITEMS = 'items'
 export const ITEM = 'item'
+
+export const SEVEN_BOOK_WITH_DISCOUNT_TOTAL = '282.50'
+export const SEVEN_BOOK_WITH_DISCOUNT_SUBTOTAL = '350.00'
+export const SEVEN_BOOK_WITH_DISCOUNT_DISCOUNT = '-67.50'
