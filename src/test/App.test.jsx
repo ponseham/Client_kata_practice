@@ -88,4 +88,11 @@ describe('Book Store', () => {
         await userEvent.click(clearButton)
         expect(screen.getByText(CONSTANTS.BASKET_EMPTY_MESSAGE)).toBeInTheDocument()
     })
+    test("Show price without any discount when adding single book", async () => {
+        await addGivenBooksToBasket([2])
+        expect(screen.getByText(CONSTANTS.TOTAL_LABEL)).toBeInTheDocument()
+        expect(screen.getByTestId(CONSTANTS.TEST_ID_TOTAL)).toHaveTextContent(CONSTANTS.ONE_BOOK_PRICE_WITHOUT_DISCOUNT_AMOUNT)
+        expect(screen.queryByText(CONSTANTS.SUBTOTAL_LABEL)).not.toBeInTheDocument()
+        expect(screen.queryByText(CONSTANTS.DISCOUNT_LABEL)).not.toBeInTheDocument()
+    })
 })

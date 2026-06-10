@@ -162,3 +162,18 @@
     cursor: pointer;
     color: #6c757d;
 }
+
+.basket-price-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 4px;
+    font-weight: 700;
+    color: #212529;
+    margin-top: 6px;
+}
+
+.price-amount {
+    font-variant-numeric: tabular-nums;
+}

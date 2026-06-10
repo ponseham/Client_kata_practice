@@ -39,3 +39,9 @@ export const EXPECTED_BOOK_TITLE_DISPLAY_COUNT_AFTER_REMOVE_BOOK = 1
 
 export const CLEAR_BUTTON_LABEL = 'Clear'
 export const CLEAR_BASKET_ARIA_LABEL = 'Clear basket'
+
+export const TOTAL_LABEL = 'Total'
+export const TEST_ID_TOTAL = 'total'
+export const DISCOUNT_LABEL = 'Discount'
+export const SUBTOTAL_LABEL = 'Subtotal'
+export const ONE_BOOK_PRICE_WITHOUT_DISCOUNT_AMOUNT = '50.00'

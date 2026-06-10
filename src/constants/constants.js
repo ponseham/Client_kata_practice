@@ -17,3 +17,7 @@ export const EMPTY_COUNT = 0
 export const REMOVE_BUTTON_LABEL = 'X'
 
 export const CLEAR_BUTTON_LABEL = 'Clear'
+
+export const DISPLAY_DECIMAL_PLACES = 2
+export const TOTAL_LABEL = 'Total'
+export const TEST_ID_TOTAL = 'total'
