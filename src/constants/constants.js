@@ -21,3 +21,7 @@ export const CLEAR_BUTTON_LABEL = 'Clear'
 export const DISPLAY_DECIMAL_PLACES = 2
 export const TOTAL_LABEL = 'Total'
 export const TEST_ID_TOTAL = 'total'
+export const SUBTOTAL_LABEL = 'Subtotal'
+export const TEST_ID_SUBTOTAL = 'subtotal'
+export const DISCOUNT_LABEL = 'Discount'
+export const TEST_ID_DISCOUNT = 'discount'

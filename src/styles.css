@@ -177,3 +177,20 @@
 .price-amount {
     font-variant-numeric: tabular-nums;
 }
+
+.basket-price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 4px;
+}
+
+.basket-price-discount {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 4px;
+    color: #198754;
+}
