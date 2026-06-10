@@ -17,10 +17,10 @@ export function calculateBasketPrice(basketItems) {
 function convertBasketItemsIntoGroups(basketItems) {
     const copyOfBasketItems = { ...basketItems }
     const discountGroups = []
-    let hasBooks = hasRemainingBooksToGroup(copyOfBasketItems)
-    while (hasBooks) {
+    let hasBooksRemainingForGrouping = hasRemainingBooksToGroup(copyOfBasketItems)
+    while (hasBooksRemainingForGrouping) {
         discountGroups.push(createBookGroup(copyOfBasketItems))
-        hasBooks = hasRemainingBooksToGroup(copyOfBasketItems)
+        hasBooksRemainingForGrouping = hasRemainingBooksToGroup(copyOfBasketItems)
     }
     return convertFiveAndThreeToTwoGroupsOfFour(discountGroups)
 }
@@ -48,28 +48,25 @@ function convertFiveAndThreeToTwoGroupsOfFour(discountGroups) {
     if (!groups.groupOfFiveBooks || !groups.groupOfThreeBooks) {
         return discountGroups
     }
-    while (hasGroupsToMove(groups)) {
-        moveBookFromFiveToThree(groups)
+    while (hasFiveAndThreeBookGroups(groups)) {
+        convertFiveAndThreeToFourAndFour(groups)
         groups = findDiscountFiveAndThreeGroups(discountGroups)
     }
     return discountGroups
 }
 function findDiscountFiveAndThreeGroups(discountGroups) {
     return {
-        groupOfFiveBooks: findGroupOfFiveBooks(discountGroups),
-        groupOfThreeBooks: findGroupOfThreeBooks(discountGroups)
+        groupOfFiveBooks: findGroupBySize(discountGroups, GROUP_OF_FIVE_BOOKS),
+        groupOfThreeBooks: findGroupBySize(discountGroups, GROUP_OF_THREE_BOOKS)
     }
 }
-function findGroupOfFiveBooks(discountGroups) {
-    return discountGroups.find(group => group.size === GROUP_OF_FIVE_BOOKS)
+function findGroupBySize(discountGroups, groupSize) {
+    return discountGroups.find(group => group.size === groupSize)
 }
-function findGroupOfThreeBooks(discountGroups) {
-    return discountGroups.find(group => group.size === GROUP_OF_THREE_BOOKS)
-}
-function hasGroupsToMove({ groupOfFiveBooks, groupOfThreeBooks }) {
+function hasFiveAndThreeBookGroups({ groupOfFiveBooks, groupOfThreeBooks }) {
     return groupOfFiveBooks && groupOfThreeBooks
 }
-function moveBookFromFiveToThree({ groupOfFiveBooks, groupOfThreeBooks }) {
+function convertFiveAndThreeToFourAndFour({ groupOfFiveBooks, groupOfThreeBooks }) {
     const bookToMove = findBookToMove(groupOfFiveBooks, groupOfThreeBooks)
 
     groupOfFiveBooks.delete(bookToMove)
