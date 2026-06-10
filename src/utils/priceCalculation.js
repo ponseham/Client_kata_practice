@@ -1,6 +1,6 @@
 import { BOOK_PRICE } from '../constants/books'
 import { DISCOUNT_RATES } from '../constants/discount'
-import { NO_DISCOUNT, QUANTITY_STEP } from '../constants/constants'
+import { NO_DISCOUNT, QUANTITY_STEP, GROUP_OF_FIVE_BOOKS, GROUP_OF_THREE_BOOKS } from '../constants/constants'
 
 export function calculateBasketPrice(basketItems) {
     let total = 0
@@ -30,7 +30,7 @@ function convertBasketItemsIntoGroups(basketItems) {
         discountGroups.push(group)
         hasBooks = hasRemainingBooksToGroup(copyOfBasketItems)
     }
-    return discountGroups
+    return convertFiveAndThreeToTwoGroupsOfFour(discountGroups)
 }
 function hasRemainingBooksToGroup(items) {
     for (const quantity of Object.values(items)) {
@@ -39,6 +39,29 @@ function hasRemainingBooksToGroup(items) {
         }
     }
     return false
+}
+function convertFiveAndThreeToTwoGroupsOfFour(discountGroups) {
+    let groupOfFiveBooks = findGroupOfFiveBooks(discountGroups)
+    let groupOfThreeBooks = findGroupOfThreeBooks(discountGroups)
+
+    if (!groupOfFiveBooks || !groupOfThreeBooks) {
+        return discountGroups
+    }
+
+    while (groupOfFiveBooks && groupOfThreeBooks) {
+        const bookToMove = [...groupOfFiveBooks].find(bookId => !groupOfThreeBooks.has(bookId))
+        groupOfFiveBooks.delete(bookToMove)
+        groupOfThreeBooks.add(bookToMove)
+        groupOfFiveBooks = findGroupOfFiveBooks(discountGroups)
+        groupOfThreeBooks = findGroupOfThreeBooks(discountGroups)
+    }
+    return discountGroups
+}
+function findGroupOfFiveBooks(discountGroups) {
+    return discountGroups.find(group => group.size === GROUP_OF_FIVE_BOOKS)
+}
+function findGroupOfThreeBooks(discountGroups) {
+    return discountGroups.find(group => group.size === GROUP_OF_THREE_BOOKS)
 }
 function calculatePriceForGroup(basketSize) {
     return basketSize * BOOK_PRICE
