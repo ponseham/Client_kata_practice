@@ -1,4 +1,5 @@
 import { BOOK_PRICE } from '../constants/books'
+import { DISCOUNT_RATES } from '../constants/discount'
 
 export function calculateBasketPrice(basketItems) {
     let total = 0
@@ -6,15 +7,7 @@ export function calculateBasketPrice(basketItems) {
     let basketSize = Object.keys(basketItems).length
 
     subtotal = basketSize * BOOK_PRICE
-    let discount = 0
-    if (basketSize === 2)
-        discount = 0.05
-    else if (basketSize === 3)
-        discount = 0.10;
-    else if (basketSize === 4)
-        discount = 0.20;
-    else if (basketSize === 5)
-        discount = 0.25;
+    let discount = DISCOUNT_RATES.get(basketSize) ?? 0
     total = basketSize * BOOK_PRICE * (1 - discount)
 
     return { subtotal, discount: subtotal - total, total }
