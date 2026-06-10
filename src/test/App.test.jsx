@@ -129,4 +129,10 @@ describe('Book Store', () => {
         expect(screen.getAllByText(CONSTANTS.BOOK_QUANTITY_SEPARATOR + '1')).toHaveLength(3)
         expect(screen.getAllByText(CONSTANTS.BOOK_QUANTITY_SEPARATOR + '2')).toHaveLength(2)
     })
+    test("Show price with discount when adding three sets of books", async () => {
+        await addGivenBooksToBasket([0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2])
+        expect(screen.getByTestId(CONSTANTS.TEST_ID_TOTAL)).toHaveTextContent(CONSTANTS.THREE_SETS_OF_BOOKS_WITH_DISCOUNT_TOTAL)
+        expect(screen.getByTestId(CONSTANTS.TEST_ID_SUBTOTAL)).toHaveTextContent(CONSTANTS.THREE_SETS_OF_BOOKS_BOOKS_WITH_DISCOUNT_SUBTOTAL)
+        expect(screen.getByTestId(CONSTANTS.TEST_ID_DISCOUNT)).toHaveTextContent(CONSTANTS.THREE_SETS_OF_BOOKS_BOOKS_WITH_DISCOUNT_DISCOUNT)
+    })
 })
