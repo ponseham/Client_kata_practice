@@ -25,3 +25,5 @@ export const SUBTOTAL_LABEL = 'Subtotal'
 export const TEST_ID_SUBTOTAL = 'subtotal'
 export const DISCOUNT_LABEL = 'Discount'
 export const TEST_ID_DISCOUNT = 'discount'
+
+export const NO_DISCOUNT = 0
