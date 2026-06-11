@@ -1,22 +1,49 @@
 import { BOOK_PRICE } from '../constants/books'
 import { DISCOUNT_RATES } from '../constants/discount'
-import { NO_DISCOUNT } from '../constants/constants'
+import { NO_DISCOUNT, QUANTITY_STEP } from '../constants/constants'
 
 export function calculateBasketPrice(basketItems) {
     let total = 0
     let subtotal = 0
-    let basketSize = Object.keys(basketItems).length
 
-    subtotal = calculatePriceForBasket(basketSize)
-    let discountRate = calculateDiscountForBasket(basketSize)
-    total = calculatePriceForBasket(basketSize) * (1 - discountRate)
+    const discountBookSets = createBookSetsForDiscount(basketItems)
+    for (const bookSet of discountBookSets) {
+        subtotal += calculatePriceForBookSet(bookSet.size)
+        let discountRate = calculateDiscountForBookSet(bookSet.size)
+        total += calculatePriceForBookSet(bookSet.size) * (1 - discountRate)
+    }
 
     return { subtotal, discount: subtotal - total, total }
 }
-function calculatePriceForBasket(basketSize) {
-    return basketSize * BOOK_PRICE
+function createBookSetsForDiscount(basketItems) {
+    const discountBookSets = []
+    const remainingBooksToCreateSet = { ...basketItems }
+    while (hasBooksToCreateSets(remainingBooksToCreateSet)) {
+        const bookSet = createBookSet(remainingBooksToCreateSet)
+        discountBookSets.push(bookSet)
+    }
+    return discountBookSets
 }
 
-function calculateDiscountForBasket(basketSize) {
-    return DISCOUNT_RATES.get(basketSize) ?? NO_DISCOUNT
+function hasBooksToCreateSets(items) {
+    return Object.values(items).some(quantity => quantity > 0)
+}
+
+function createBookSet(itemsInBasket) {
+    const newBookSet = new Set()
+    Object.entries(itemsInBasket).forEach(([bookId, quantity]) => {
+        if (quantity >= QUANTITY_STEP) {
+            newBookSet.add(Number(bookId))
+            itemsInBasket[bookId] = itemsInBasket[bookId] - QUANTITY_STEP
+        }
+    })
+    return newBookSet
+}
+
+function calculatePriceForBookSet(bookSetSize) {
+    return bookSetSize * BOOK_PRICE
+}
+
+function calculateDiscountForBookSet(bookSetSize) {
+    return DISCOUNT_RATES.get(bookSetSize) ?? NO_DISCOUNT
 }

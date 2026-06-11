@@ -27,3 +27,5 @@ export const DISCOUNT_LABEL = 'Discount'
 export const TEST_ID_DISCOUNT = 'discount'
 
 export const NO_DISCOUNT = 0
+export const BOOK_QUANTITY_SEPARATOR = '×'
+export const INITIAL_QUANTITY = 0
