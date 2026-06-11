@@ -31,3 +31,6 @@ export const BOOK_QUANTITY_SEPARATOR = '×'
 export const INITIAL_QUANTITY = 0
 export const GROUP_OF_FIVE_BOOKS = 5
 export const GROUP_OF_THREE_BOOKS = 3
+
+export const ADD_ONE_MORE_PREFIX = '+1'
+export const REMOVE_SINGLE_BOOK_BUTTON_LABEL = '-1'
