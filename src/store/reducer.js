@@ -1,4 +1,4 @@
-import { QUANTITY_STEP, INITIAL_QUANTITY } from '../constants/constants'
+import { QUANTITY_STEP, INITIAL_QUANTITY, EMPTY_COUNT } from '../constants/constants'
 const initialState = {
     items: {},
 }
@@ -33,6 +33,18 @@ export default function basketReducer(state = initialState, action) {
                 ...state,
                 items: {},
             }
+        }
+        case 'REMOVE_SINGLE_BOOK': {
+            const bookId = action.payload
+            const copyOfBasket = { ...state.items }
+            const updatedQuantity = copyOfBasket[bookId] - QUANTITY_STEP
+
+            if (updatedQuantity <= EMPTY_COUNT) {
+                delete copyOfBasket[bookId]
+            } else {
+                copyOfBasket[bookId] = updatedQuantity
+            }
+            return { ...state, items: { ...copyOfBasket } }
         }
         default:
             return state
