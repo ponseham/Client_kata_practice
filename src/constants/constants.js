@@ -29,3 +29,5 @@ export const TEST_ID_DISCOUNT = 'discount'
 export const NO_DISCOUNT = 0
 export const BOOK_QUANTITY_SEPARATOR = '×'
 export const INITIAL_QUANTITY = 0
+export const GROUP_OF_FIVE_BOOKS = 5
+export const GROUP_OF_THREE_BOOKS = 3
